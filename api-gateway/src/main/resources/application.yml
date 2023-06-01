@@ -1,0 +1,11 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: api-gateway
+    #optional
+  cloud:
+    zookeeper:
+      discovery:
+        enable: true
+      connect-string: localhost:2181
