@@ -3,6 +3,12 @@ server:
 spring:
   application:
     name: cambio-service
+    #optional
+  cloud:
+    zookeeper:
+      discovery:
+        enable: true
+      connect-string: localhost:2181
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/cambio_service?useTimezone=true&serverTimezone=UTC
@@ -16,3 +22,6 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
+logging:
+  level:
+    '[org.apache.zookeeper.ClientCnxn]': WARN
