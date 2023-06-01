@@ -44,7 +44,7 @@ class BookController {
         book.currency = currency
         book.price = cambio!!.convertedValue
 
-        book.environment = "$port FEIGN"
+        book.environment = "BOOK PORT: $port CAMBIO PORT: ${cambio.environment}"
 
         return book
     }
