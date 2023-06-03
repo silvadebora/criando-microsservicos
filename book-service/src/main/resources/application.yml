@@ -1,5 +1,25 @@
 server:
   port: 8100
+resilience4j:
+  #retry:
+    #instance:
+      #foo-bar:
+        #maxAttempts: 7
+        #waitDuration: 1s
+        #simular ao fibonacci - aumenta o tempo de espera para fazer requisição
+        #enableExponentialBackoff: true
+  #rateLimiter:
+    #instances:
+      #default:
+        #limiteForPeriod: 2
+        #limitRefreshPeriod: 10s
+  bulkhead:
+    instances:
+      default:
+        maxConcurrentCalls: 10
+      foo-bar:
+        maxConcurrentCalls: 10
+
 spring:
   application:
     name: book-service
